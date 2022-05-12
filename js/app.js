@@ -15,8 +15,13 @@ const btn3 = document.querySelector('#btn3');
 btn3.addEventListener('click', toggleDiv);
 const divCarre = document.querySelector('.carre');
 
+// input colors
+document.querySelector('#backColor').addEventListener('change', changeFond);
+document.querySelector('#txtColor').addEventListener('change', changeCoul);
+document.querySelector('#reset').addEventListener('click', resetP);
 
-function clickBtn() { 
+
+function clickBtn() {
     titre.innerText += ' ' + nm.value + ' ' + pnm.value;
 }
 
@@ -26,6 +31,7 @@ function overBtn() {
     myBtn.style.border = '1px solid #f00';
     myBtn.style.cursor = 'pointer';
 }
+
 function leaveBtn() {
     // myBtn.style.color = "initial";
     // myBtn.style.backgroundColor = "initial";
@@ -75,4 +81,27 @@ function affImg() {
 
 function toggleDiv() {
     divCarre.classList.toggle('vert');
+}
+
+function changeFond() {
+    let couleur = document.querySelector('#backColor');
+    // console.log(couleur.value);
+    let txtP = document.querySelector('#texte');
+    txtP.style.backgroundColor = couleur.value;
+}
+
+function changeCoul() {
+    let couleur = document.querySelector('#txtColor');
+    // console.log(couleur.value);
+    let txtP = document.querySelector('#texte');
+    txtP.style.color = couleur.value;
+}
+
+function resetP() {
+    let txtP = document.querySelector('#texte');
+    // txtP.style.backgroundColor = '#fff';
+    // txtP.style.color = '#000';
+
+    txtP.style.removeProperty('background-color');
+    txtP.style.removeProperty('color');
 }

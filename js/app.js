@@ -10,10 +10,11 @@ const titre = document.querySelector('h1');
 const btn2 = document.querySelector('#btn2');
 
 btn2.addEventListener('click', affImg);
-const btn3 = document.querySelector('#btn3');
 
-const divCarre = document.querySelector('.carre');
+const btn3 = document.querySelector('#btn3');
 btn3.addEventListener('click', toggleDiv);
+const divCarre = document.querySelector('.carre');
+
 
 function clickBtn() { 
     titre.innerText += ' ' + nm.value + ' ' + pnm.value;
@@ -69,7 +70,6 @@ function affImg() {
         divImg2.style.backgroundPosition = 'center';
         divImg2.style.backgroundSize = 'cover';
         divImage.appendChild(divImg2);
-
     }
 }
 
